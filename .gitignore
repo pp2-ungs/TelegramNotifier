@@ -118,9 +118,7 @@ tmp/
 
 # Package Files #
 *.jar
-!telegrambots-6.7.0-jar-with-dependencies
-!telegrambots-6.7.0-javadoc
-!telegrambots-6.7.0-sources
+!lib/*.jar
 *.war
 *.nar
 *.ear
