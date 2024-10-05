@@ -8,8 +8,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 @SuppressWarnings("deprecation")
 public class Telegram extends TelegramLongPollingBot {
 
-    private String botUsername;
-    private String botToken;
+    private final String botUsername;
+    private final String botToken;
 
     public Telegram() {
         botUsername = "TASkOcupadoBot";
@@ -34,7 +34,7 @@ public class Telegram extends TelegramLongPollingBot {
         try {
             execute(message);
         } catch (TelegramApiException e) {
-            e.printStackTrace();
+            System.out.println("?telegram bot not working");
         }
     }
 
