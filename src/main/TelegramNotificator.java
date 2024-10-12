@@ -1,9 +1,11 @@
 package main;
 
+import annotation.Notificator;
 import java.io.IOException;
 import observer.Observer;
 import java.util.Map;
 
+@Notificator
 public class TelegramNotificator implements Observer {
 
     private Map<String, Number> membersIDs;
@@ -39,11 +41,6 @@ public class TelegramNotificator implements Observer {
             }
         }).start();
         System.out.println("[debuggin] TelegramNotificator update: \n" + event);
-    }
-
-    @Override
-    public String getName() {
-        return "Telegram notification";
     }
 
 }
