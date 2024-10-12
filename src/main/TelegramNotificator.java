@@ -41,11 +41,9 @@ public class TelegramNotificator implements Observer {
         System.out.println("[debuggin] TelegramNotificator update: \n" + event);
     }
 
-    /*  este código no puede estar todavía, después lo agregamos en una nueva branch,
-        pero no se puede mezclar con la iteración 0
     @Override
     public String getName() {
         return "Telegram notification";
     }
-     */
+
 }
