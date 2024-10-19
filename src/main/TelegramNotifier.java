@@ -1,16 +1,16 @@
 package main;
 
-import annotation.Notificator;
 import java.io.IOException;
 import observer.Observer;
 import java.util.Map;
+import annotation.Notifier;
 
-@Notificator
-public class TelegramNotificator implements Observer {
+@Notifier
+public class TelegramNotifier implements Observer {
 
     private Map<String, Number> membersIDs;
 
-    public TelegramNotificator() {
+    public TelegramNotifier() {
         try {
             membersIDs = TelegramFinder.getTelegramIDMap();
         } catch (IOException ex) {
@@ -21,10 +21,8 @@ public class TelegramNotificator implements Observer {
     @Override
     public void update(Object event) {
 
-        //\begin{FIXME}
         String taskDescription = (String) ((Map) event).get("Task");
         String memberName = (String) ((Map) event).get("Name");
-        //\end{FIXME}
 
         Long memberTelegramId = membersIDs.get(memberName).longValue();
 
