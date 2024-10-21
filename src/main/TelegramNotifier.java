@@ -35,6 +35,6 @@ public class TelegramNotifier implements Observer {
                 }
             }
         }).start();
-        System.out.println("[debuggin] TelegramNotifier update: \n" + event);
+        System.out.println("[debugging] TelegramNotifier update: \n" + event);
     }
 }
