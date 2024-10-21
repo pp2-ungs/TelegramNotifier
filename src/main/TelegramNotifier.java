@@ -4,11 +4,11 @@ import java.io.IOException;
 import observer.Observer;
 import java.util.Map;
 
-public class TelegramNotificator implements Observer {
+public class TelegramNotifier implements Observer {
 
     private Map<String, Number> membersIDs;
 
-    public TelegramNotificator() {
+    public TelegramNotifier() {
         try {
             membersIDs = TelegramFinder.getTelegramIDMap();
         } catch (IOException ex) {
@@ -18,11 +18,8 @@ public class TelegramNotificator implements Observer {
 
     @Override
     public void update(Object event) {
-
-        //\begin{FIXME}
         String taskDescription = (String) ((Map) event).get("Task");
         String memberName = (String) ((Map) event).get("Name");
-        //\end{FIXME}
 
         Long memberTelegramId = membersIDs.get(memberName).longValue();
 
@@ -38,14 +35,6 @@ public class TelegramNotificator implements Observer {
                 }
             }
         }).start();
-        System.out.println("[debuggin] TelegramNotificator update: \n" + event);
+        System.out.println("[debuggin] TelegramNotifier update: \n" + event);
     }
-
-    /*  este código no puede estar todavía, después lo agregamos en una nueva branch,
-        pero no se puede mezclar con la iteración 0
-    @Override
-    public String getName() {
-        return "Telegram notification";
-    }
-     */
 }
