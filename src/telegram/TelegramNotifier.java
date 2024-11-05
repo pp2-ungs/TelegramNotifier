@@ -1,4 +1,4 @@
-package main;
+package telegram;
 
 import java.io.IOException;
 import observer.Observer;

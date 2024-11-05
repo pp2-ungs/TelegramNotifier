@@ -1,4 +1,4 @@
-package main;
+package telegram;
 
 import com.google.gson.Gson;
 import core.Settings;
