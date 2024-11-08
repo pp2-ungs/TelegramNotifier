@@ -3,8 +3,9 @@ package telegram;
 import java.io.IOException;
 import observer.Observer;
 import java.util.Map;
+import notifier.Notifier;
 
-public class TelegramNotifier implements Observer {
+public class TelegramNotifier implements Notifier {
 
     private Map<String, Number> personIDs;
 
